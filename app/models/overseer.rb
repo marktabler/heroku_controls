@@ -1,17 +1,21 @@
 class Overseer
   include HTTParty
   base_uri 'https://api.heroku.com'
-  basic_auth '', ENV['HEROKU_API_KEY']
   default_params :output => 'json'
   format :json
 
-  attr_accessor :app_name
+  attr_accessor :app_name, :api_key
 
-  def initialize(app_name)
+  def initialize(app_name, api_key)
     @app_name = app_name
+    @api_key = key
   end
 
-  def self.reboot!
-    post("/apps/#{@app_name}/ps/restart")
+  def auth
+    {username: '', key: @api_key}
+  end
+
+  def reboot!
+    post("/apps/#{@app_name}/ps/restart", :basic_auth => auth )
   end
 end
