@@ -1,13 +1,9 @@
 production:
-  template: template0
   database: heroku_controls_production
   adapter: postgresql
-  encoding: sql-ascii
   pool: 5
 
 development:
-  template: template0
   database: heroku_controls_development
   adapter: postgresql
-  encoding: sql-ascii
   pool: 5

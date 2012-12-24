@@ -1,11 +1,17 @@
 HerokuControls::Application.routes.draw do
-  resources :users
+  resources :users, except: [:index, :show]
 
 
-  resources :apps
+  resources :apps do
+    member do
+      post 'reboot'
+    end
+  end
 
-  match 'login' => 'users#login'
-  match 'logout' => 'users#logout'
+  resources :sessions
+
+  match 'login' => 'sessions#new', as: :login
+  match 'logout' => 'sessions#destroy', as: :logout
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

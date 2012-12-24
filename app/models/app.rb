@@ -4,6 +4,6 @@ class App < ActiveRecord::Base
   belongs_to :user
 
   def reboot!
-    Overseer.new(name, current_user.api_key).reboot!
+    Overseer.new(name, user.api_key).reboot!
   end
 end

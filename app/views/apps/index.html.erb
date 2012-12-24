@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>App Name</th>
+    <th>Controls</th>
+    <th></th>
+  </tr>
+
+<% @apps.each do |app| %>
+  <tr>
+    <td><%= app.name %></td>
+    <td><%= link_to "Reboot", reboot_app_path(app), method: :post, confirm: "Reboot this application?" %></td>
+    <td><%= link_to "Delete", app_path(app), method: :delete, confirm: "Remove this app from your Heroku Controls account?" %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to "Add an app", new_app_path %>
