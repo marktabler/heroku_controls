@@ -1,0 +1,7 @@
+1. Debug phantom "success" message on production when rebooting app "zynga"
+2. Add links (user edit, etc)
+3. Either remove email or establish password reset option
+4. Fix current_user bug in application.html.erb
+5. Fix front page
+6. Add log snapshot feature
+7. Add system health check feature (grab a location on a timer)
