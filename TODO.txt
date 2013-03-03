@@ -5,3 +5,4 @@
 5. Fix front page
 6. Add log snapshot feature
 7. Add system health check feature (grab a location on a timer)
+8. OMG OMG OMG IOS APP!!!
